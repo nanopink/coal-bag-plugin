@@ -15,6 +15,7 @@ Coal Bag displays the amount of coal in your coal bag directly in your inventory
 The counter updates when the game reports the coal bag's contents, such as when you check, fill, or empty the bag. Once known, the counter also follows coal mined directly into an open bag, bonus ore from the Celestial ring and Varrock platebody, and bank container-emptying.
 
 Coal picked up from the ground directly into an open bag cannot be tracked reliably because the game does not expose a safe event for that action.
+
 ## Configuration
 
 The following counter colors can be configured in RuneLite:
