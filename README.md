@@ -1,36 +1,44 @@
-# Coal Bag Plugin
+# Coal Bag
 
-Adds a counter to the coal bag.
+Coal Bag displays the amount of coal in your coal bag directly in your inventory.
 
-## Description
+## Features
 
-The plugin is simple, it adds a counter to the coal bag to tell you how much coal is in the coal bag. The counter only updates when you add coal manually into the bag. It will not update when coal is added automatically while the bag is opened.
+- Displays the known coal amount on the coal bag.
+- Shows `0` when the bag is known to be empty.
+- Shows `?` when the amount is unknown.
+- Provides configurable colors for known, empty, and unknown amounts.
 
-This plugin is a modified version of [Adam's esspouch](https://github.com/Adam-/runelite-plugins/blob/esspouch/src/main/java/info/sigterm/plugins/esspouch/EssPouchPlugin.java) plugin.
+## How It Works
 
-## Help
+The counter updates when the game reports the coal bag's contents, such as when you check, fill, or empty the bag. The amount starts as unknown each time the plugin is enabled and remains unknown until the game reports the bag's contents.
 
-If you find a issue please [open a issue](https://github.com/WolffTech/coal-bag-plugin/issues/new) on this repository with a description of what's happening and how to reproduce the issue.
+Coal added automatically while mining with an open coal bag is not currently tracked. Check the bag to update the counter after mining this way.
 
-## Version History
-* 1.5
-  * Fix Issue #4
-    * Check for the widget on `onClientTick` instead of `onGameTick` as it's possible to close the widget on the same game tick that it opens.
-* 1.4 (Thank you to [keyosk](https://github.com/keyosk) for this update!)
-  * Added a configurable color for the counter
-  * Both chat messages and widget messages are now evaluated as they can be different.
-  * Cleaned up code and bug fixes
-* 1.3
-  * Updated coal bag empty message as it changed in one of the latest game updates
-  * Cleaned up code
-* 1.2
-  * Fix Issue #2
-    * Game will no longer error when completing temple trekks or when receiving a new cluescroll step.
-  * Counter updates properly when one piece of coal is left in the bag when emptying.
-* 1.1
-  * Fix Issue #1
-    * Counter should account for Smithing Cape of Accomplishment.
-    * Counter now displays the correct amount of coal in bag when emptied.
-  * Changed name to "Coal Bag"
-* 1.0
-    * Initial Release
+## Configuration
+
+The following counter colors can be configured in RuneLite:
+
+- **Filled Color**: Used when the bag contains a known amount of coal.
+- **Empty Color**: Used when the bag is known to be empty.
+- **Unknown Color**: Used before the bag's contents are known.
+
+## Installation
+
+1. Open RuneLite.
+2. Open the Configuration panel and select **Plugin Hub**.
+3. Search for **Coal Bag**.
+4. Select **Install**.
+
+## Support
+
+If you encounter a problem, [open an issue](https://github.com/WolffTech/coal-bag-plugin/issues/new) with a description of the problem and the steps needed to reproduce it.
+
+## Credits
+
+Coal Bag is based on Adam's [Essence Pouch plugin](https://github.com/Adam-/runelite-plugins/blob/esspouch/src/main/java/info/sigterm/plugins/esspouch/EssPouchPlugin.java).
+
+## Project Information
+
+- See [CHANGELOG.md](CHANGELOG.md) for release history.
+- This project is licensed under the [BSD 2-Clause License](LICENSE).
